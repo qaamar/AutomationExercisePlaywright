@@ -5,6 +5,12 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.44.1-focal
+
+    env:
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }} 
 
     steps:
     - name: Checkout repository
