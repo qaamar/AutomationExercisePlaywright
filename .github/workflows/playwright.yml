@@ -1,40 +1,19 @@
 name: Playwright Tests
-
-on: [push, pull_request]
-
+on:
+  push:
+    branches: [ main ]
 jobs:
-  test:
+  playwrighttests:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.44.1-focal
-
-
+      image: mcr.microsoft.com/playwright:v1.29.1-focal
+      env:
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20.14.0' # Specify the Node.js version
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Install Playwright browsers
-      run: npx playwright install
-
-    - name: Run Playwright tests
-      run: npx playwright test
-
-    - name: Upload test results
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: playwright-test-results
-        path: test-results/
-
-    - name: Set environment variables
-      run: |
-            echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
-            echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: |        
+          echo "Run playwright tests"
+          npm run test:ci

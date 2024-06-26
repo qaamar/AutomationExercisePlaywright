@@ -30,6 +30,7 @@ export class ContactUsPage {
     uploadFile = async () => {
         const filePath = '/Users/admin/Downloads/invoice.txt'
         await this.chooseFileBtn.click()
+        await this.page.waitForTimeout(2000)
         await this.chooseFileBtn.setInputFiles(filePath)
         this.page.on('dialog', dialog => dialog.accept());
         await this.submitBtn.click()
