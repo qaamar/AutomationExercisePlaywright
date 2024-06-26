@@ -9,7 +9,7 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.44.1-focal
       env:
           ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-          ADMIN_USERNAME: ${{ secrets.ADMIN_PASSWORD }}
+          ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME}}
    
 
     steps:
