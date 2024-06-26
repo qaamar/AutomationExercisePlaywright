@@ -161,9 +161,6 @@ export class CartPage {
     downloadInvoice = async () => {
         const downloadPromise = this.page.waitForEvent('download');
         await this.downloadInvoiceButton.click()
-        const download = await downloadPromise;
-        await download.saveAs('/Users/admin/Downloads' + download.suggestedFilename());
-       const downloadUrl = download.url()
-       return downloadUrl
+        
     }
 }
