@@ -8,9 +8,6 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.44.1-focal
 
-    env:
-      ADMIN_USERNAME: ${{secrets.ADMIN_USERNAME}}
-      ADMIN_PASSWORD: ${{secrets.ADMIN_PASSWORD}} 
 
     steps:
     - name: Checkout repository
@@ -36,3 +33,8 @@ jobs:
       with:
         name: playwright-test-results
         path: test-results/
+
+    - name: Set environment variables
+      run: |
+            echo "ADMIN_USERNAME=${{ secrets.ADMIN_USERNAME }}" >> $GITHUB_ENV
+            echo "ADMIN_PASSWORD=${{ secrets.ADMIN_PASSWORD }}" >> $GITHUB_ENV
