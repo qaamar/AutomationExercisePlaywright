@@ -69,7 +69,7 @@ test.describe('Navigation bar pages', () => {
         await homePage.visitAndVerifyHomePage()
     })
 
-    test.only("Contact Us form test", async ({ page, homePage, contactUsPage }) => {
+    test("Contact Us form test", async ({ page, homePage, contactUsPage }) => {
 
         await homePage.navigateToContactUs()
         await contactUsPage.verifyTitlesAreVisible()
