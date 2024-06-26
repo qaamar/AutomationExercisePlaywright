@@ -5,8 +5,6 @@ import { faker } from '@faker-js/faker';
 
 
 
-
-
 test.describe('Registration and login', () => {
     test.beforeEach(async ({ homePage }) => {
         await homePage.visitAndVerifyHomePage()

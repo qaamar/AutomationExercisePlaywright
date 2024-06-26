@@ -9,8 +9,8 @@ jobs:
       image: mcr.microsoft.com/playwright:v1.44.1-focal
 
     env:
-      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
-      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }} 
+      ADMIN_USERNAME: ${{secrets.ADMIN_USERNAME}}
+      ADMIN_PASSWORD: ${{secrets.ADMIN_PASSWORD}} 
 
     steps:
     - name: Checkout repository
