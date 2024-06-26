@@ -5,7 +5,7 @@ export const getLoginToken = async (elmail, password) => {
     const response = await fetch('https://automationexercise.com/api/verifyLogin', {
         method: 'POST',
         params: {
-            email: 'admin@1secmail.com',
+            email: adminDetails.email,
             password: adminDetails.password
         }
     })
