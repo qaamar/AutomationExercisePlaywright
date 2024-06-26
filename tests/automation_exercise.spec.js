@@ -28,7 +28,7 @@ test.describe('Registration and login', () => {
 
     })
 
-    test.only("Login admin user test", async ({ homePage, loginAndRegistrationPage }) => {
+    test("Login admin user test", async ({ homePage, loginAndRegistrationPage }) => {
 
         await loginAndRegistrationPage.loginToWebsite(adminDetails.email, adminDetails.password);
         await homePage.verifyAdminUserIsLoggedIn();
@@ -43,7 +43,7 @@ test.describe('Registration and login', () => {
 
     })
 
-    test.only("Logout user test", async ({ homePage, loginAndRegistrationPage }) => {
+    test("Logout user test", async ({ homePage, loginAndRegistrationPage }) => {
 
         // Wait for "Login to your account" heading and login to website
         await loginAndRegistrationPage.loginHeading.waitFor()
@@ -221,7 +221,7 @@ test.describe("Purchase tests", () => {
 
     })
 
-    test.only ("Place Order: Login before Checkout test", async ({ homePage, loginAndRegistrationPage, productsPage, cartPage }) => {
+    test ("Place Order: Login before Checkout test", async ({ homePage, loginAndRegistrationPage, productsPage, cartPage }) => {
 
         await homePage.navigateToRegister()
         await loginAndRegistrationPage.loginToWebsite(adminDetails.email, adminDetails.password)
@@ -301,7 +301,7 @@ test.describe("Category Tests", () => {
         await productsPage.verifyUserIsOnBrandPage(secondBrand)
     })
 
-    test.only("Search Products and Verify Cart After Login test", async ({ page, homePage, productsPage, cartPage, loginAndRegistrationPage }) => {
+    test("Search Products and Verify Cart After Login test", async ({ page, homePage, productsPage, cartPage, loginAndRegistrationPage }) => {
 
         await homePage.navigateToProducts()
         await productsPage.verifyAllProductsTitle()
