@@ -118,9 +118,9 @@ export class LoginAndRegistrationPage {
     }
 
     dateOfBirth = async () => {
-        await this.dayOfBirth.selectOption(faker.datatype.number({ min: 1, max: 30 }).toString())
-        await this.monthOfBirth.selectOption(faker.datatype.number({ min: 1, max: 12 }).toString())
-        await this.yearOfBirth.selectOption(faker.datatype.number({ min: 1950, max: 2000 }).toString())
+        await this.dayOfBirth.selectOption(faker.number.int({ min: 1, max: 30 }).toString())
+        await this.monthOfBirth.selectOption(faker.number.int({ min: 1, max: 12 }).toString())
+        await this.yearOfBirth.selectOption(faker.number.int({ min: 1950, max: 2000 }).toString())
     }
 
     verifyAccountCreatedSuccessfully = async () => {

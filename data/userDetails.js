@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker"
 
-const fakeName = faker.name.firstName()
+const fakeName = faker.person.firstName()
 const fakeEmail = faker.internet.email()
 const fakeSubject = faker.lorem.sentence()
 const fakeParagraph = faker.lorem.paragraph()
